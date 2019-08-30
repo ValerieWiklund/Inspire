@@ -1,8 +1,9 @@
 //NOTE your service is all set up for the observer pattern but there is still work to be done
+import Todo from '../models/Todo.js'
 
 // @ts-ignore
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jake/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/Valerie/todos/',
 	timeout: 3000
 });
 
@@ -25,15 +26,22 @@ export default class TodoService {
 		return _state.error
 	}
 
+	get Todos() {
+		return _state.todos.map(t => new Todo(t))
+	}
+
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn)
 	}
 
+
 	getTodos() {
-		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
 				//TODO Handle this response from the server
+				let todoData = res.data.data.map(t => new Todo(t))
+				_setState('todos', todoData)
+
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
@@ -42,8 +50,11 @@ export default class TodoService {
 		todoApi.post('', todo)
 			.then(res => {
 				//TODO Handle this response from the server (hint: what data comes back, do you want this?)
+				_state.todos.push(res.data.data)
+				_setState('todos', _state.todos)
 			})
-			.catch(err => _setState('error', err.response.data))
+			.catch(err => console.log(err))
+		//_setState('error', err.response.data))
 	}
 
 	toggleTodoStatus(todoId) {
@@ -63,6 +74,15 @@ export default class TodoService {
 		//TODO Work through this one on your own
 		//		what is the request type
 		//		once the response comes back, what do you need to insure happens?
+		todoApi.delete(todoId)
+			.then(res => {
+				let index = _state.todos.findIndex(t => t.id == todoId)
+				console.log(index)
+				_state.todos.splice(index, 1)
+				_setState('todos', _state.todos)
+			})
+
+
 	}
 
 }
