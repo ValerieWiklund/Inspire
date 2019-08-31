@@ -9,6 +9,17 @@ export default class Weather {
     //      check out the other data that comes back and see if there is anything you want to try
 
     this.city = data.name
-    this.kelvin = data.main.temp
+    this.temp = data.main.temp
+    this.description = data.weather[0].main
+  }
+
+
+  get Template() {
+    return ` <div class="card">
+  <div class="card-body">
+    ${this.temp}
+    ${this.city}
+  </div>
+  </div>`
   }
 }
