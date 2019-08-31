@@ -59,25 +59,28 @@ export default class TodoService {
 
 	toggleTodoStatus(todoId) {
 		let todo = _state.todos.find(todo => todo._id == todoId)
+		todo.completed = !todo.completed
+		console.log(todo.completed)
 		//TODO Make sure that you found a todo, 
 		//		and if you did find one
 		//		change its completed status to whatever it is not (ex: false => true or true => false)
 
-		todoApi.put(todoId, todo)
+		todoApi.put(todoId, { completed: todo.completed })
 			.then(res => {
 				//TODO do you care about this data? or should you go get something else?
+				_setState('todos', _state.todos)
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
 
 	removeTodo(todoId) {
+
 		//TODO Work through this one on your own
 		//		what is the request type
 		//		once the response comes back, what do you need to insure happens?
 		todoApi.delete(todoId)
 			.then(res => {
-				let index = _state.todos.findIndex(t => t.id == todoId)
-				console.log(index)
+				let index = _state.todos.findIndex(t => t._id == todoId)
 				_state.todos.splice(index, 1)
 				_setState('todos', _state.todos)
 			})

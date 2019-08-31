@@ -5,31 +5,42 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Inspire</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<title>Inspire</title>
 </head>
 
 <body id="bg-image">
-	<div id="weather">
-		Your Weather Template
-	</div>
+	<div class="container-fluid">
 
-	<div id="quote">
-		The Quote
-	</div>
+		<div id="weather">
+			Your Weather Template
+		</div>
 
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit="app.controllers.todoController.addTodo(event)">
-			<div class="form-group">
-				<label for="description">What needs doing?</label>
-				<input type="text" class="form-control" id="description" placeholder="Enter your task" name="description">
+		<div id="quote">
+			The Quote
+		</div>
+
+		<div>
+			<div class="row">
+				<div class="col-2">
+
+
+					A Todo List
+					<div id="todo-error"></div>
+					<form onsubmit="app.controllers.todoController.addTodo(event)">
+						<div class="form-group">
+							<label for="description">What needs doing?</label>
+							<input type="text" class="form-control" id="description" placeholder="Enter your task" name="description">
+						</div>
+						<button type="submit" class="btn btn-primary btn-sm">Submit</button>
+					</form>
+					<div id="todos">
+
+					</div>
+				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
-		<div id="todos">
-
 		</div>
 	</div>
 

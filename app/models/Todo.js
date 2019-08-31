@@ -1,6 +1,6 @@
 export default class Todo {
   constructor(data) {
-    this.id = data._id
+    this._id = data._id
     this.completed = data.completed
     this.user = data.user
     this.description = data.description
@@ -11,7 +11,8 @@ export default class Todo {
   <div class="card-body">
     ${this.description}
   </div>
-  <button class="btn btn-primary" onclick="app.controllers.todoController.removeTodo(${this.id}">Delete</button>
+  <button class="btn btn-primary btn-sm" onclick="app.controllers.todoController.removeTodo('${this._id}')">Delete</button>
+  <button class="btn btn-primary btn-sm" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">Complete</button>
 </div>
  `
   }
@@ -21,12 +22,12 @@ export default class Todo {
 
 //	<button class="btn btn-primary" onclick="app.controllers.todoService.removeTodo(${this._id})>Submit</button>
 
-{/* <div class="card">
+/* <div class="card">
   <div class="card-body">
     ${this.description}
   </div>
   <button class="btn btn-primary" onclick="app.controllers.todoService.removeTodo(${this._id}">Submit</button>
-</div> */}
+</div> */
 
   // <ul>
   //   <li>${this.description}</li>
