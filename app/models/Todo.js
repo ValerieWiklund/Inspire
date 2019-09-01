@@ -19,16 +19,3 @@ export default class Todo {
 }
 
 
-
-//	<button class="btn btn-primary" onclick="app.controllers.todoService.removeTodo(${this._id})>Submit</button>
-
-/* <div class="card">
-  <div class="card-body">
-    ${this.description}
-  </div>
-  <button class="btn btn-primary" onclick="app.controllers.todoService.removeTodo(${this._id}">Submit</button>
-</div> */
-
-  // <ul>
-  //   <li>${this.description}</li>
-  // </ul> `

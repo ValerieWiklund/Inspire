@@ -1,5 +1,5 @@
 //NOTE your service is all set up for the observer pattern but there is still work to be done
-import Todo from '../models/Todo.js'
+import Todo from '../models/todo.js'
 
 // @ts-ignore
 const todoApi = axios.create({

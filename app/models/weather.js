@@ -14,12 +14,12 @@ export default class Weather {
   }
 
 
-  get Template() {
-    return ` <div class="card">
-  <div class="card-body">
-    ${this.temp}
-    ${this.city}
-  </div>
-  </div>`
-  }
+  // get Template() {
+  //   return ` <div class="card">
+  // <div class="card-body">
+  //   ${temp}
+  //   ${this.city}
+  // </div>
+  // </div>`
+  // }
 }
