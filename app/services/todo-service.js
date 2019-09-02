@@ -35,13 +35,13 @@ export default class TodoService {
 	}
 
 
+
 	getTodos() {
 		todoApi.get()
 			.then(res => {
 				//TODO Handle this response from the server
 				let todoData = res.data.data.map(t => new Todo(t))
 				_setState('todos', todoData)
-
 			})
 			.catch(err => _setState('error', err.response.data))
 	}

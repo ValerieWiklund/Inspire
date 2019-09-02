@@ -5,15 +5,13 @@ const _todoService = new TodoService()
 //TODO Create the render function
 function _drawTodos() {
 	let todos = _todoService.Todos
-	console.log(todos)
-	let template = ''
+	let template = ``
 	todos.forEach(t => template += t.Template)
 	document.getElementById('todos').innerHTML = template
 }
 
 //NOTE Keep an eye on your console for any of these errors
 function _drawError() {
-	console.error('[TODO ERROR]', _todoService.TodoError)
 }
 
 
