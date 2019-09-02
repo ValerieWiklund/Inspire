@@ -9,16 +9,15 @@ export default class Todo {
     let template = `<div class="form-check" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">`
     if (this.completed == false) {
       template += `<input type="checkbox" class="form-check-input" value="">
-      <label class="form-check-label" > ${this.description}</label>
-        </div >
+      <label class="form-check-label"> ${this.description}</label>
+        </div>
         <button class="btn btn-primary btn-sm" onclick="app.controllers.todoController.removeTodo('${this._id}')">Delete</button>`
     } else {
       template += `<input type="checkbox" class="form-check-input" value="" checked>
-      <label class="form-check-label" > ${this.description}</label>
-        </div >
+      <label class="form-check-label completed-task" > ${this.description} </label>
+        </div>
        <button class="btn btn-primary btn-sm" onclick="app.controllers.todoController.removeTodo('${this._id}')">Delete</button>`
     }
-
     return template
   }
 }
