@@ -13,29 +13,32 @@
 
 <body id="bg-image">
 	<div class="container-fluid">
-
-		<div id="weather">
-			Your Weather Template
+		<div class="row justify-content-end">
+			<div id="weather" class="">
+			</div>
 		</div>
-
-		<div id="quote">
-			The Quote
-		</div>
-
-		<div>
-			<div class="row">
-				<div class="col-4">
-					A Todo List
-					<div id="todo-error"></div>
+		<div class="row justify-content-end">
+			<div class="todo-display px-2">
+				<div id="todos">
+				</div>
+				<a href="#!" id="todo-form-link" class="todo-link" onclick="app.controllers.todoController.showForm()">Create
+					Task</a>
+				<div id="todo-form" style="display:none">
 					<form onsubmit="app.controllers.todoController.addTodo(event)">
 						<div class="form-group">
 							<label for="description">What needs doing?</label>
-							<input type="text" class="form-control" id="description" placeholder="Enter your task" name="description">
+							<input type="text" class="form-control form-control-sm" id="description" placeholder="Enter your task"
+								name="description">
 						</div>
 						<button type="submit" class="btn btn-primary btn-sm">Submit</button>
 					</form>
-					<div id="todos">
-					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row justify justify-content-center align-items-end">
+			<div class="col-6">
+				<div id="quote" class="text-center">
+					The Quote
 				</div>
 			</div>
 		</div>
@@ -46,4 +49,26 @@
 </body>
 
 </html>
-<html>
+
+
+
+
+<!-- <div class="card">
+	<div id="todos" class="card-body todo-display">
+	</div>
+	<a href="#!" id="todo-form-link" class="todo-link" onclick="app.controllers.todoController.showForm()">Create
+		Task</a>
+	<div id="todo-form" style="display:none">
+		<form onsubmit="app.controllers.todoController.addTodo(event)">
+			<div class="form-group">
+				<label for="description">What needs doing?</label>
+				<input type="text" class="form-control form-control-sm" id="description" placeholder="Enter your task"
+					name="description">
+			</div>
+			<button type="submit" class="btn btn-primary btn-sm">Submit</button>
+		</form>
+	</div>
+</div>
+</div>
+
+</div> -->

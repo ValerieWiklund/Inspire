@@ -12,14 +12,4 @@ export default class Weather {
     this.temp = data.main.temp
     this.description = data.weather[0].main
   }
-
-
-  // get Template() {
-  //   return ` <div class="card">
-  // <div class="card-body">
-  //   ${temp}
-  //   ${this.city}
-  // </div>
-  // </div>`
-  // }
 }

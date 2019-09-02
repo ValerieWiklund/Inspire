@@ -11,12 +11,10 @@ function drawWeather() {
 	console.log("THE WEATHER MAN SAYS:", _weatherService.Weather)
 	let conditions = _weatherService.Weather
 	let fTemp = Math.round(((conditions.temp - 273) * 1.8) + 32)
-	let template = ` <div class="card">
-  <div class="card-body">
-    ${fTemp}
-    ${conditions.city}
-  </div>
-  </div>`
+	let template = ` <div class="weather-display pt-4 pb-1 px-5">
+   <h4>${fTemp} &#8457</h4>
+  <p> ${conditions.city} </p>
+    </div>`
 	document.getElementById('weather').innerHTML = template
 }
 

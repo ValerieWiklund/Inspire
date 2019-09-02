@@ -5,8 +5,10 @@ let _qs = new QuoteService()
 function _drawQuote() {
   console.log("drawing the quote", _qs.Quote);
   let dayQuote = _qs.Quote
-  let template = `<p>${dayQuote.quote}</p>
-  <p>${dayQuote.author}</p>`
+  let template = `<div class="quote-display"> 
+  <p>${dayQuote.quote}</p>
+  <p>${dayQuote.author}</p>
+  </div>`
   document.getElementById('quote').innerHTML = template
 }
 

@@ -6,10 +6,10 @@ const _is = new ImageService()
 //      (you may wish to set it as a background image)
 function _drawImage() {
   let useImage = _is.Image.image
+  console.log(useImage)
   let template = `
-       url("${useImage}")
-  `
-  document.getElementById('bg-image').style.backgroundImage = template;
+       url("${useImage}")`
+  document.getElementById('bg-image').style.backgroundImage = template
 }
 
 

@@ -5,7 +5,8 @@ const _todoService = new TodoService()
 //TODO Create the render function
 function _drawTodos() {
 	let todos = _todoService.Todos
-	let template = ``
+	let count = todos.length
+	let template = `${count} items to do`
 	todos.forEach(t => template += t.Template)
 	document.getElementById('todos').innerHTML = template
 }
@@ -25,6 +26,11 @@ export default class TodoController {
 		_todoService.getTodos()
 	}
 
+	showForm() {
+		document.getElementById("todo-form-link").style.display = "none";
+		document.getElementById("todo-form").style.display = "block"
+	}
+
 	addTodo(event) {
 		event.preventDefault()
 		var form = event.target
@@ -33,6 +39,8 @@ export default class TodoController {
 			description: form.description.value
 		}
 		_todoService.addTodo(todo)
+		document.getElementById("todo-form-link").style.display = "";
+		document.getElementById("todo-form").style.display = "none"
 		form.reset()
 	}
 
