@@ -3,11 +3,10 @@ import QuoteService from "../services/quote-service.js";
 let _qs = new QuoteService()
 
 function _drawQuote() {
-  console.log("drawing the quote", _qs.Quote);
   let dayQuote = _qs.Quote
-  let template = `<div class="quote-display"> 
-  <p>${dayQuote.quote}</p>
-  <p>${dayQuote.author}</p>
+  let template = `<div class="quote-display px-2"> 
+  <h5>${dayQuote.quote}</h5>
+  <p> - ${dayQuote.author}</p>
   </div>`
   document.getElementById('quote').innerHTML = template
 }

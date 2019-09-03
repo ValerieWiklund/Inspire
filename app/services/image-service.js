@@ -32,7 +32,6 @@ export default class ImageService {
 	}
 
 	getImage() {
-		console.log("Getting the Image")
 		_imgApi.get()
 			.then(res => {
 				_setState('image', new Image(res.data))

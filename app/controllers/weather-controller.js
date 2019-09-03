@@ -8,7 +8,6 @@ var _weatherService = new WeatherService()
 
 //TODO Complete rendering data to the screen
 function drawWeather() {
-	console.log("THE WEATHER MAN SAYS:", _weatherService.Weather)
 	let conditions = _weatherService.Weather
 	let fTemp = Math.round(((conditions.temp - 273) * 1.8) + 32)
 	let template = ` <div class="weather-display pt-4 pb-1 px-5">

@@ -31,7 +31,6 @@ export default class QuoteService {
 	}
 
 	getQuote() {
-		console.log('calling for quotes')
 		_quoteApi.get()
 			.then(res => {
 				_setState('quote', new Quote(res.data))
